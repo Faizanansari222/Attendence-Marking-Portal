@@ -3,7 +3,7 @@
 function Dashboard() {
   return (
     <div>
-      <h1>Dashobard</h1>
+              <h1>Dashobard</h1>
     </div>
   )
 }

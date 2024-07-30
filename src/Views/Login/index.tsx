@@ -38,7 +38,7 @@ function Login() {
             src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-40 mb-8 mx-auto block' />
           </a> */}
 
-            <div className="p-8 rounded-2xl bg-white shadow">
+            <div className="p-8 rounded-2xl  bg-white shadow-md">
               <h2 className="text-gray-800 text-center text-2xl font-bold">
                 Sign in
               </h2>

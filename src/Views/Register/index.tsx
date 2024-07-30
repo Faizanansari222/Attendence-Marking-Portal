@@ -16,42 +16,43 @@ function Register() {
     try {
       if (password !== confirmPassword) {
         Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: " Password does not match",
-            // footer: '<a href="#">Why do I have this issue?</a>'
-            
-          });
-        
-        } else {
-        await register(email, password)
-        setEmail("")
-        setPassword("")
-        setConfirmPassword("")
-        Swal.fire({
-            icon: "success",
-            title: "Registration Successfull",
-            // footer: '<a href="#">Why do I have this issue?</a>'
-          });
-          navigate('/')
+          icon: "error",
+          title: "Oops...",
+          text: " Password does not match",
+          // footer: '<a href="#">Why do I have this issue?</a>'
+        });
+      } else {
+        await register(email, password);
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+        await Swal.fire({
+          icon: "success",
+          title: "Registration Successfull",
+          // footer: '<a href="#">Why do I have this issue?</a>'
+        });
+        navigate("/");
       }
-    } catch (error:any) {
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: error,
-            // footer: '<a href="#">Why do I have this issue?</a>'
-          });
+    } catch (error: any) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error,
+        // footer: '<a href="#">Why do I have this issue?</a>'
+      });
     }
   };
 
   return (
     <div>
       <div className="bg-gradient-to-r from-gray-900 via-blue-600 to-gray-800 flex flex-col justify-center font-[sans-serif] sm:h-screen p-4">
-        <div className="max-w-md bg-white  w-full mx-auto border border-gray-300 rounded-2xl p-8">
+        <div className="max-w-md bg-white  w-full mx-auto border shadow-sm border-gray-300 rounded-2xl p-8">
           <div className="text-center mb-12">
             <a href="javascript:void(0)">
-              <div className="text-gray-800 text-center text-2xl font-bold"> Admin Register</div>
+              <div className="text-gray-800 text-center text-2xl font-bold">
+                {" "}
+                Admin Register
+              </div>
               {/* <img
             src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-40 inline-block' /> */}
             </a>
@@ -127,8 +128,9 @@ function Register() {
             <p className="text-gray-800 text-sm mt-6 text-center">
               Already have an account?{" "}
               <button
-              onClick={()=>{navigate("/")}}
-                
+                onClick={() => {
+                  navigate(-1);
+                }}
                 className="text-blue-600 font-semibold hover:underline ml-1"
               >
                 Login here
